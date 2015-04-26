@@ -1,17 +1,17 @@
 {
-    "name": "marciocamello/yii2-paypal",
-    "description": "The PayPal extension for the Yii2 framework",
+    "name": "kongoon/yii2-paypal",
+    "description": "The PayPal extension for the Yii2 framework based on marciocamello/yii2-paypal",
     "keywords": ["yii2", "paypal"],
     "type": "yii2-extension",
     "license": "BSD-3-Clause",
     "support": {
-        "issues": "https://github.com/marciocamello/yii2-paypal/issues",
-        "source": "https://github.com/marciocamello/yii2-paypal"
+        "issues": "https://github.com/kongoon/yii2-paypal/issues",
+        "source": "https://github.com/kongoon/yii2-paypal"
     },
     "authors": [
         {
-            "name": "Marcio Camello",
-            "email": "marciocamello@outlook.com"
+            "name": "Manop Kongoon",
+            "email": "kongoon@hotmail.com"
         }
     ],
     "minimum-stability": "dev",
@@ -24,7 +24,7 @@
     },
     "autoload": {
         "psr-4": {
-            "marciocamello\\": ""
+            "kongoon\\yii2\paypal\\": ""
         }
     }
 }

@@ -66,6 +66,11 @@ class Paypal extends Component
     {
         $this->setConfig();
     }
+    
+    /**
+     * @getApiContext
+     * getApiContext
+     */
     public function getApiContext(){
         return $this->_apiContext;
     }

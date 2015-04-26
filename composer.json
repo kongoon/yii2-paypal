@@ -24,7 +24,7 @@
     },
     "autoload": {
         "psr-4": {
-            "kongoon\\yii2\paypal\\": ""
+            "kongoon\\yii2\\paypal\\": ""
         }
     }
 }

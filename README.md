@@ -35,3 +35,25 @@ Add to to you Yii2 config file this part with component settings:
     ]
 ],
 ```
+
+How Use
+====
+
+```php
+private function pay() {
+    Yii::$app->paypal->init();
+    $apiContext = Yii::$app->paypal->getApiContext();
+    
+    // [..]
+    
+    $payment = new Payment();
+    
+    try {
+        $payment->create($apiContext);
+    } catch (Exception $ex) {
+        echo PaypalError($e);
+        exit(1);
+    }
+    $approvalUrl = $payment->getApprovalLink();
+}
+```

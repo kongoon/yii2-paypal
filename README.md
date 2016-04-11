@@ -28,10 +28,32 @@ Add to to you Yii2 config file this part with component settings:
      'config'       => [
          'http.ConnectionTimeOut' => 30,
          'http.Retry'             => 1,
-         'mode'                   => \marciocamello\Paypal::MODE_SANDBOX, // development (sandbox) or production (live) mode
+         'mode'                   => \kongoon\yii2\Paypal::MODE_SANDBOX, 	// sandbox | live 
          'log.LogEnabled'         => YII_DEBUG ? 1 : 0,
          'log.FileName'           => '@runtime/logs/paypal.log',
-        'log.LogLevel'           => \marciocamello\Paypal::LOG_LEVEL_FINE,
+         'log.LogLevel'           => \kongoon\yii2\Paypal::LOG_LEVEL_FINE,	// FINE | INFO | WARN | ERROR
     ]
 ],
+```
+
+How Use
+====
+
+```php
+private function pay() {
+    Yii::$app->paypal->init();
+    $apiContext = Yii::$app->paypal->getApiContext();
+    
+    // [..]
+    
+    $payment = new Payment();
+    
+    try {
+        $payment->create($apiContext);
+    } catch (Exception $ex) {
+        echo PaypalError($e);
+        exit(1);
+    }
+    $approvalUrl = $payment->getApprovalLink();
+}
 ```
